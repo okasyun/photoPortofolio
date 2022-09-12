@@ -1,0 +1,233 @@
+/******************************************************************
+
+Stylesheet: ベーススタイル
+
+******************************************************************/
+
+// ボタンの色をシンプル
+// 時間が経つとアニメーションがずれてくる
+
+html {
+    font-family: 'Chivo', sans-serif;
+    // font-family: 'Domine', serif;
+    // font-family: 'Noto Serif JP', serif;
+    // font-family: 'Playfair Display', serif;
+}
+
+body {
+    background-color: $cBlack;
+    margin: 0;
+    overflow: hidden;
+}
+
+img {
+    max-width: 90%;
+    max-height: 70%;
+    vertical-align: bottom;
+    
+    // aspect-ratio: 4 / 5;
+}
+
+a {
+    text-decoration: none !important;
+    color: $cWhite;
+}
+
+li {
+    list-style: none;
+}
+
+.content-width {
+    width: 95%;
+    margin: 0 auto;
+    max-width: $contentMaxWidth;
+}
+
+.link {
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.5s;
+}
+
+.red-line {
+    content: '';
+    // 絶対配置で線の位置を決める
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+    // 線の形状
+    width: 100%;
+    height: 1px;
+    background: red;
+    // アニメーションの指定
+    transition: all .2s;
+    transform: scale(0, 1);
+    // 上部中央起点
+    transform-origin: center top;
+}
+
+#container {
+    background-color: $cBlack;
+    position: relative;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $navHeight;
+    background-color: transpaent;
+    color: $cWhite;
+    display: flex;
+    align-items: center;
+    z-index: 1000; //最前面にする
+
+    &__ul {
+        // flexのデフォルトは横にそろえる
+        display: flex;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    &__li {
+        // インスタアイコンだけ線削除したい
+        margin-left: 20px;
+
+        
+
+        & > a {
+            @extend .link;
+            
+            &:hover {
+                // color: #aaaもあり
+                color: red;
+                &::after {
+                    // X方向にスケール拡大
+                    transform: scale(1, 1);
+                }
+            }
+
+            &::after {
+                @extend .red-line;
+            }
+        }
+
+        &.current > a {
+            pointer-events: none;
+            color: red;
+
+            &::after {
+                // X方向にスケール拡大
+                transform: scale(1, 1);
+            }
+        }
+    }
+
+    &__li-icon {
+        // インスタアイコンだけ線削除したい
+        margin-left: 20px;
+        &:last-child {
+            margin-right: 20px;
+        }
+
+        & > a {
+            @extend .link;
+
+            &:hover {
+                color: red;
+
+                &::after {
+                    // X方向にスケール拡大
+                    transform: scale(1, 1);
+                }
+            }
+        }
+    }
+
+    & .logo {
+        font-size: 25px;
+        justify-content: center;
+    }
+
+    &__nav {
+        display: none;
+    }
+
+    &__inner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        // これがないとjustify-contentが起動しないgakidoushinai
+        // margin 0 autoで中央に寄せる
+        @extend .content-width;
+    }
+}
+
+#main-content {
+    @extend .content-width;
+    position: relative;
+    // margin-top: $navHeight;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.img-display {
+    object-fit: contain;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 55px;
+
+    &__show {
+        animation: img-wrap 10s forwards infinite;
+        background-color: $cBlack;
+        bottom: 0;
+        left: 0;
+        pointer-events: none;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 100;
+    }
+
+    & > img {
+        object-fit: contain;
+        position: absolute;
+        overflow: hidden;
+        cursor: pointer;
+        display: none;
+
+        &.active {
+            display: block;
+        }
+    }
+}
+
+.footer {
+    @extend .content-width;
+}
+
+@keyframes img-wrap {
+    0% {
+
+    }
+
+    50% {
+        transform: translateY(100%);
+    }
+
+    100% {
+        transform: translateY(100%);
+    }
+}

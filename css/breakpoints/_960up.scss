@@ -1,0 +1,61 @@
+/******************************************************************
+
+Stylesheet: 960px以上のモニタで適用
+
+******************************************************************/
+
+.header {
+    background-color: $cBlack;
+    &__inner {
+        justify-content: space-between;
+    }
+    &__nav {
+        display: block;
+    }
+}
+
+.img-display {
+    height: 90%;
+    & > .title {
+        bottom: 2%;
+    }
+}
+
+.mobile-menu, .mobile-menu__btn {
+    display: none;
+}
+
+
+.gallery {
+    columns: 4;
+    // column-gap: 30px;
+    // & > li {
+    //     margin: 0 0 30px;
+    // }
+}
+
+.about {
+    margin-top: 0;
+    left: 0;
+    right: 0;
+    top: $navHeight;
+    bottom: $navHeight;
+    position: absolute;
+
+    &__inner {
+        display: flex;
+
+        &>.selfie {
+            margin-bottom: 0;
+
+            &>img {
+                height: 90%;
+            }
+        }
+
+        &>.box_text {
+            padding-left: 20px;
+
+        }
+    }
+}

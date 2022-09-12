@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shun Okamoto</title>
+    <meta name="description" content="a portfolio of Shun Okamoto">
+    <link href="https://use.fontawesome.com/releases/v6.1.1/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="loader">Loading...</div>
+    <div id="global-container">
+        <div id="container">
+            <header class="header">
+                <div class="header__inner">
+                    <a href="home.html" class="logo">
+                        <span class="logo">Shun Okamoto</span>
+                    </a>
+                    <nav class="header__nav">
+                        <ul class="header__ul">
+                            <li class="header__li"><a class="menu__link" href="home.html">Home</a></li>
+                            <li class="header__li"><a class="menu__link" href="about.html">About</a></li>
+                            <li class="header__li has-child">
+                                Works
+                                <ul class="header__ul-child">
+                                    <li class="header__li-child"><a class="menu__link" href="street.html">Street</a>
+                                    </li>
+                                    <li class="header__li-child"><a class="menu__link" href="animal.html">Animal</a>
+                                    </li>
+                                    <li class="header__li-child"><a class="menu__link" href="live.html">Live</a></li>
+                                    <li class="header__li-child"><a class="menu__link" href="others.html">Others</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="header__li current"><a class="menu__link" href="contact.html">Contact</a></li>
+                            <li class="header__li">
+                                <a class="menu__link" href="https://www.instagram.com/okashun5927/"><i
+                                        class="fa-brands fa-instagram"></i></a>
+                            </li>
+                            <li class="header__li">
+                                <a class="menu__link" href="https://twitter.com/photo_1207"><i class="fa-brands fa-twitter""></i></a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <button class=" mobile-menu__btn">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        </button>
+                </div>
+            </header>
+            <main class="contact">
+                <form action="post" action entype="multipart/form-data">
+                    <div class="wrap_tbl">
+                        <div class="company">
+                            <div class="question">COMPANY</div>
+                            <input type="text" name="COMPANY" value>
+                        </div>
+                        <div class="name">
+                            <div class="question">NAME</div>
+                            <input type="text" name="NAME" value>
+                        </div>
+                        <div class="name">
+                            <div class="question">E-mail</div>
+                            <input type="text" name="E-mail" value>
+                        </div>
+                        <div class="TEL">
+                            <div class="question">NAME</div>
+                            <input type="text" name="TEL" value>
+                        </div>
+                        <div class="MESSAGE">
+                            <div class="question">MESSAGE</div>
+                            <textarea name="MESSAGE" cols="50" rows="5"></textarea>
+                        </div>
+                        <div class="dd_btn">
+                            <button type="submit" name="submitConfirm" value="confirm" class="btn_send link_fade">SEND</button>
+                        </div>
+                    </div>
+                </form>
+            </main>
+            <footer class="footer windowsize">
+                <div class="copy-right">&copy;Shun Okamoto</div>
+            </footer>
+        </div>
+        <p id="page-top"><a href="#" class="page-top__link"><i class="fa-solid fa-arrow-up"></i></a>
+        <nav class="mobile-menu">
+            <ul class="mobile-menu__ul">
+                <li class="mobile-menu__li">
+                    <a class="mobile-menu__link" href="home.html">
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="mobile-menu__li">
+                    <a class="mobile-menu__link" href="about.html">
+                        About
+                    </a>
+                </li>
+                <li class="mobile-menu__li has-child">
+                    Works
+                    <ul class="mobile-menu__ul-child">
+                        <li class="__li-child"><a class="mobile-menu__link" href="street.html">Street</a></li>
+                        <li class="__li-child"><a class="mobile-menu__link" href="animal.html">Animal</a></li>
+                        <li class="__li-child"><a class="mobile-menu__link" href="live.html">Live</a></li>
+                        <li class="__li-child"><a class="mobile-menu__link" href="others.html">Others</a></li>
+                    </ul>
+                </li>
+                <li class="mobile-menu__li current last">
+                    <a class="mobile-menu__link" href="contact.html">
+                        Contact
+                    </a>
+                </li>
+                <ul class="mobile-menu__icon">
+                    <li class="mobile-menu__social-item"><a href="https://www.instagram.com/okashun5927/"><i
+                                class="fa-brands fa-instagram"></i></a></li>
+                    <li class="mobile-menu__social-item"><a href="https://twitter.com/photo_1207"><i
+                                class="fa-brands fa-twitter"></i></a></li>
+                </ul>
+            </ul>
+        </nav>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="scripts/base.js"></script>
+</body>
+
+</html>

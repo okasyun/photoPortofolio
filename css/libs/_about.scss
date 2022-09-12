@@ -1,0 +1,88 @@
+
+.about {
+    max-width: 1300px;
+    // margin-bottom: 80px;
+    margin-top: 80px;
+    // left: 0;
+    // right: 0;
+    // top: $navHeight;
+    // bottom: $navHeight;
+    font-family: 'Noto Serif JP', serif;
+    // position: absolute;
+    position: relative;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    letter-spacing: 2px;
+    &__inner {
+        height: 80%;
+        width: 90%;
+        margin: auto;
+        display: block;
+        // display: flex;
+    }
+}
+
+.selfie {
+    margin-bottom: 20px;
+}
+
+.box_text {
+    // animation: text_Up 1s ease forwards;
+    padding-left: 5px;
+    margin: auto 0;
+    letter-spacing: 0.2em;
+
+    &.inview {
+        animation: text_Up 1s ease forwards;
+    }
+    /* padding-top: 35px; */
+    // margin-left: 20px;
+    & > .title {
+        font-size: 1.3rem;
+    }
+
+    & > .text_Jap {
+        font-size: 0.8rem;
+        padding-top: 15px;
+        line-height: 2.25em;
+    }
+
+    & > .text_Eng {
+        font-size: 0.8rem;
+        letter-spacing: 0.14em;
+        line-height: 2.0em;
+        // font-size: .7rem;
+        padding-top: 10px;
+        // line-height: 2em;
+        // letter-spacing: 0.2em;
+    }
+
+    & > .gear {
+        padding-top: 30px;
+        font-size: 1.2rem;
+        & > .text {
+            font-size: 0.8rem;
+            // margin-bottom: 10px;
+            & > li {
+                &:first-child {
+                    padding-top: 10px;
+                }
+                letter-spacing: 0.2rem;
+                padding-bottom: 10px;
+            }
+        }
+    }
+}
+
+@keyframes text_Up {
+    from {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

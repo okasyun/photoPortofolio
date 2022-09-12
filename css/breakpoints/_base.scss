@@ -1,0 +1,237 @@
+/******************************************************************
+
+Stylesheet: ベーススタイル
+
+******************************************************************/
+
+// 画像リンクにする
+// 時間が経つとアニメーションがずれてくる
+
+html {
+    font-family: 'Chivo', sans-serif, 'Noto Serif JP';
+}
+
+body {
+    color: $cWhite;
+    background-color: $cBlack;
+    margin: 0;
+}
+
+img {
+    object-fit: contain;
+    max-width: 100%;
+    max-height: 100%;
+    vertical-align: bottom;
+}
+
+a {
+    text-decoration: none !important;
+    color: $cWhite;
+    display: block;
+    text-align: center;
+    cursor: pointer;
+    // text-transform: uppercase;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+li {
+    list-style: none;
+}
+
+
+.content-width {
+    width: 95%;
+    margin: 0 auto;
+    max-width: $contentMaxWidth;
+}
+
+.link {
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.5s;
+}
+
+// #global-container {
+//     animation: page_change 2s ease-in-out;
+// }
+#global-container {
+    position: relative;
+    opacity:0;
+    visibility: hidden;
+    &.loaded {
+        opacity :1;
+        visibility: visible;
+    }
+}
+#container {
+    background-color: $cBlack;
+    position: relative;
+    animation: page_change 1s ease-in-out;
+    min-height: 100vh;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $navHeight;
+    color: $cWhite;
+    display: flex;
+    align-items: center;
+    z-index: 100000; //最前面にする
+
+
+    &__nav {
+            display: none;
+        }
+    
+    &__inner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @extend .content-width;
+    }
+
+    &__ul {
+        // flexのデフォルトは横にそろえる
+        display: flex;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+
+        &-child {
+            display: block;
+        }
+    }
+
+    &__li {
+        @extend .link;
+        position: relative;
+        // margin-left: 20px;
+        padding: 0 15px;
+
+        &.has-child {
+            cursor: pointer;
+            &::before {
+                content: '';
+                position: absolute;
+                left: 3px;
+                top: 7px;
+                width: 6px;
+                height: 6px;
+                border-top: 1px solid $cWhite;
+                border-right: 1px solid $cWhite;
+                transform: rotate(135deg);
+            }
+
+            & > ul {
+                position: absolute;
+                width:100%;
+                height: auto;
+                left: 0;
+                top: auto;
+                z-index: 100001;
+                background-color: $cBlack;
+                visibility: hidden;
+                opacity: 0;
+                transition: all .3s;
+
+            }
+
+            &:hover {
+                & > ul {
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+
+            &.current > span {
+                cursor: pointer;
+            };
+        }
+
+        &-child {
+            &.curernt {
+                pointer-events: none;
+            }
+            & > a {
+                padding: 10px 0;
+            }
+        }
+
+    }
+
+li.curent {
+    pointer-events: none;
+}
+    & .logo {
+        font-size: 25px;
+        justify-content: center;
+        transition: all .5s;
+        &:hover {
+            color: rgb(100, 100, 100);;
+        }
+    }
+}
+
+.current > a {
+
+    pointer-events: none !important;
+    color: rgb(100, 100, 100);
+
+}
+
+.menu__link {
+    transition: all .5s;
+    &:hover {
+        color: rgb(100, 100, 100);;
+    }
+}
+// #main-content {
+//     @extend .content-width;
+//     position: relative;
+//     // margin-top: $navHeight;
+//     // height: 100vh;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     margin: 0 auto;
+// }
+
+
+.footer {
+    font-size: 0.8em;
+    z-index: 1000;
+    position: relative;
+    // position: absolute;
+    background-color: $cBlack;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    height: $navHeight;
+
+    &.windowsize {
+        position: absolute;
+    }
+
+    & > .copy-right {
+        margin: auto;
+        letter-spacing: 2px;
+    }
+}
+
+@keyframes page_change {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;;
+    }
+}

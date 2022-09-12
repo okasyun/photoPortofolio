@@ -1,0 +1,79 @@
+@charset "utf-8";
+
+/*==================================================
+ギャラリーのためのcss
+===================================*/
+
+#gallery-content {
+    @extend .content-width;
+    width: 90% !important;
+    position: relative;
+    display: block;
+    justify-content: center;
+    // align-items: center;
+    margin: $navHeight auto 0 !important;
+}
+
+.gallery-display {
+    position: relative;
+    top:0;
+    left:0;
+    right:0;
+    margin: 0 auto;
+}
+
+.gallery {
+    margin: 0;
+    padding: 0;
+    columns: 1;
+    & > li {
+        position: relative;
+        text-align: center;
+        // 画像を中心に寄せる
+        margin: 0 0 20px;
+
+        & > a{
+            position: relative;
+            // display: block; liと同じ大きさにするk
+
+            & > img {
+                width: 95%;
+            }
+        }
+    }
+
+}
+
+a {
+    color: #333;
+}
+
+a:hover,
+a:active {
+    text-decoration: none;
+}
+
+h1 {
+    text-align: center;
+    font-size: 6vw;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin: 30px 0;
+}
+
+p {
+    margin: 0 10px 10px 10px;
+    word-wrap: break-word;
+}
+
+@keyframes img-animate {
+    from {transform-origin: bottom;
+        transform: scaleY(1);
+        // transform: translateY(0px);
+    }
+    to {
+        transform-origin: bottom;
+        transform: scaleY(0);
+    }
+    
+}
